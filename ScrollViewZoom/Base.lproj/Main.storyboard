@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollViewZoom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7r-Ap-nAT">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza" translatesAutoresizingMaskIntoConstraints="NO" id="1fo-xj-YRq">
+                                        <rect key="frame" x="0.0" y="0.0" width="960" height="600"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="4Pd-ZB-D8z" appends="YES" id="hlK-wq-XJ4"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1fo-xj-YRq" firstAttribute="leading" secondItem="M7r-Ap-nAT" secondAttribute="leading" id="Fmk-NG-gAa"/>
+                                    <constraint firstAttribute="trailing" secondItem="1fo-xj-YRq" secondAttribute="trailing" id="WGW-ZN-spo"/>
+                                    <constraint firstItem="1fo-xj-YRq" firstAttribute="top" secondItem="M7r-Ap-nAT" secondAttribute="top" id="t6f-5w-WDf"/>
+                                    <constraint firstAttribute="bottom" secondItem="1fo-xj-YRq" secondAttribute="bottom" id="x7R-Gf-X61"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="M7r-Ap-nAT" secondAttribute="bottom" id="6K1-yg-dfK"/>
+                            <constraint firstItem="M7r-Ap-nAT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WcJ-QZ-XxY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M7r-Ap-nAT" secondAttribute="trailing" id="e4j-If-aXb"/>
+                            <constraint firstItem="M7r-Ap-nAT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xUh-pR-eg5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="1fo-xj-YRq" id="TEC-Li-qgz"/>
+                        <outlet property="imageViewBottomConstraint" destination="x7R-Gf-X61" id="BFE-XG-sPd"/>
+                        <outlet property="imageViewLeadingConstraint" destination="Fmk-NG-gAa" id="BeJ-Qu-0lw"/>
+                        <outlet property="imageViewTopConstraint" destination="t6f-5w-WDf" id="IB4-dy-ysn"/>
+                        <outlet property="imageViewTrailingConstraint" destination="WGW-ZN-spo" id="Rxz-h5-hfu"/>
+                        <outlet property="scrollView" destination="M7r-Ap-nAT" id="85j-08-jhP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="4Pd-ZB-D8z">
+                    <connections>
+                        <action selector="handlePinchWithRecognizer:" destination="BYZ-38-t0r" id="8Zc-6b-zC4"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pizza" width="960" height="600"/>
+    </resources>
+</document>
